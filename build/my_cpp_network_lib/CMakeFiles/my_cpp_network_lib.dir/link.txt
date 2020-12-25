@@ -1,0 +1,2 @@
+/bin/ar qc libmy_cpp_network_lib.a  CMakeFiles/my_cpp_network_lib.dir/My_client.cpp.o CMakeFiles/my_cpp_network_lib.dir/My_server.cpp.o
+/bin/ranlib libmy_cpp_network_lib.a

@@ -1,0 +1,1 @@
+/bin/g++-9  -g  -rdynamic CMakeFiles/main1.dir/main1.cpp.o  -o main1  my_cpp_network_lib/libmy_cpp_network_lib.a 

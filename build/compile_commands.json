@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/yannq/code/my_cpp_network/build",
+  "command": "/bin/g++-9    -g   -o CMakeFiles/main2.dir/main2.cpp.o -c /home/yannq/code/my_cpp_network/main2.cpp",
+  "file": "/home/yannq/code/my_cpp_network/main2.cpp"
+},
+{
+  "directory": "/home/yannq/code/my_cpp_network/build",
+  "command": "/bin/g++-9    -g   -o CMakeFiles/main1.dir/main1.cpp.o -c /home/yannq/code/my_cpp_network/main1.cpp",
+  "file": "/home/yannq/code/my_cpp_network/main1.cpp"
+},
+{
+  "directory": "/home/yannq/code/my_cpp_network/build/my_cpp_network_lib",
+  "command": "/bin/g++-9    -g   -o CMakeFiles/my_cpp_network_lib.dir/My_client.cpp.o -c /home/yannq/code/my_cpp_network/my_cpp_network_lib/My_client.cpp",
+  "file": "/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_client.cpp"
+},
+{
+  "directory": "/home/yannq/code/my_cpp_network/build/my_cpp_network_lib",
+  "command": "/bin/g++-9    -g   -o CMakeFiles/my_cpp_network_lib.dir/My_server.cpp.o -c /home/yannq/code/my_cpp_network/my_cpp_network_lib/My_server.cpp",
+  "file": "/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_server.cpp"
+}
+]

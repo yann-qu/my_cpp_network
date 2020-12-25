@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yannq/code/my_cpp_network/main2.cpp
+iostream
+-
+my_cpp_network_lib/cpp_network_inc.h
+/home/yannq/code/my_cpp_network/my_cpp_network_lib/cpp_network_inc.h
+my_cpp_network_lib/My_client.h
+/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_client.h
+my_cpp_network_lib/My_server.h
+/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_server.h
+
+/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_client.h
+
+/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_server.h
+vector
+-
+
+/home/yannq/code/my_cpp_network/my_cpp_network_lib/cpp_network_inc.h
+stdio.h
+-
+unistd.h
+-
+stdlib.h
+-
+string.h
+-
+netdb.h
+-
+sys/types.h
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+
