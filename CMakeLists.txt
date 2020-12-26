@@ -5,6 +5,7 @@ add_subdirectory(my_cpp_network_lib)
 
 add_executable(main1 main1.cpp)
 add_executable(main2 main2.cpp)
+add_executable(test test.cpp)
 
 target_link_libraries(main1 my_cpp_network_lib)
 target_link_libraries(main2 my_cpp_network_lib)

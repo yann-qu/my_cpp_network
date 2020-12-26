@@ -1,7 +1,7 @@
 #if !defined(_My_server_H_)
 #define _My_server_H_
 
-// #include <vector>
+#include "map"
 
 class My_server
 {
@@ -14,6 +14,7 @@ private:
 
     struct sockaddr_in servaddr;
     struct sockaddr_in clientaddr;
+    // std::map<int,struct sockaddr_in> clients_map;  //listenfd<--->clientaddr
 
 public:
     My_server();

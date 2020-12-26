@@ -1,6 +1,11 @@
 [
 {
   "directory": "/home/yannq/code/my_cpp_network/build",
+  "command": "/bin/g++-9    -g   -o CMakeFiles/test.dir/test.cpp.o -c /home/yannq/code/my_cpp_network/test.cpp",
+  "file": "/home/yannq/code/my_cpp_network/test.cpp"
+},
+{
+  "directory": "/home/yannq/code/my_cpp_network/build",
   "command": "/bin/g++-9    -g   -o CMakeFiles/main2.dir/main2.cpp.o -c /home/yannq/code/my_cpp_network/main2.cpp",
   "file": "/home/yannq/code/my_cpp_network/main2.cpp"
 },

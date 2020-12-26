@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_client.cpp
-cpp_network_inc.h
-/home/yannq/code/my_cpp_network/my_cpp_network_lib/cpp_network_inc.h
-iostream
--
-My_client.h
-/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_client.h
-
-/home/yannq/code/my_cpp_network/my_cpp_network_lib/My_client.h
-
 /home/yannq/code/my_cpp_network/my_cpp_network_lib/My_server.cpp
 cpp_network_inc.h
 /home/yannq/code/my_cpp_network/my_cpp_network_lib/cpp_network_inc.h
@@ -25,6 +15,8 @@ My_server.h
 /home/yannq/code/my_cpp_network/my_cpp_network_lib/My_server.h
 
 /home/yannq/code/my_cpp_network/my_cpp_network_lib/My_server.h
+map
+/home/yannq/code/my_cpp_network/my_cpp_network_lib/map
 
 /home/yannq/code/my_cpp_network/my_cpp_network_lib/cpp_network_inc.h
 stdio.h

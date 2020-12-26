@@ -77,6 +77,7 @@ int My_client::recv_msg_from_server(char *_buffer,size_t _buffer_size)
     memset(_buffer, 0, _buffer_size);
     if ((iret = recv(sockfd, _buffer, _buffer_size, 0)) <= 0) {
         std::cout<<"iret="<<iret<<std::endl;
+        perror("receive");
         return -1;
     }
     return 1;

@@ -68,7 +68,8 @@ int My_server::config_server(const char *ip_addr, const char *port)
 int My_server::acpt_client_connect(void)
 {
     int                socklen = sizeof(struct sockaddr_in);
-    struct sockaddr_in clientaddr; //客户端的地址信息
+    // int clientfd;
+    // struct sockaddr_in clientaddr; //客户端的地址信息
     clientfd =
         accept(listenfd, (struct sockaddr *)&clientaddr, (socklen_t *)&socklen);
     if (clientfd == -1) {
