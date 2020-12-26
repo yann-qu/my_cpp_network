@@ -7,8 +7,7 @@ private:
     int                sockfd;
     struct hostent *   h;
     struct sockaddr_in servaddr;
-    // char send_buffer[1024];
-    // char recv_buffer[1024];
+
 public:
     My_client(void);
 
@@ -17,8 +16,6 @@ public:
     int  send_msg_to_server(const char *_buffer);
     int  recv_msg_from_server(char *_buffer,size_t _buffer_size);
     void close_client_socket(void);
-    // int send_msg_to_server(void);
-    // int recv_msg_from_server(void);
 
     ~My_client(){};
 };

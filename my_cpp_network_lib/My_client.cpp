@@ -5,8 +5,6 @@
 My_client::My_client(void)
 {
     sockfd = 0;
-    // memset(send_buffer, 0, sizeof(send_buffer));
-    // memset(recv_buffer, 0, sizeof(recv_buffer));
 }
 
 /**
@@ -67,30 +65,6 @@ int My_client::send_msg_to_server(const char *_buffer)
     std::cout << strlen(_buffer) << std::endl;
     return 1;
 }
-
-// int My_client::send_msg_to_server(void){
-//     int iret;
-//     if((iret=send(sockfd,send_buffer,strlen(send_buffer),0))<=0){
-//         perror("send");
-//         close(sockfd);
-//         return -1;
-//     }
-//     printf("发送：%s",send_buffer);
-//     memset(send_buffer, 0, sizeof(send_buffer)); //清空发送缓冲区
-//     return 1;
-// }
-
-// int My_client::recv_msg_from_server(void){
-//     int iret;
-//     memset(recv_buffer,0,sizeof(recv_buffer));
-//     if((iret=recv(sockfd,recv_buffer,sizeof(recv_buffer),0))<=0){
-//         perror("receive");
-//         close(sockfd);
-//         return -1;
-//     }
-//     printf("接收：%s",recv_buffer);
-//     return 1;
-// }
 
 /**
  * @Date: 2020-12-25 15:51:19
