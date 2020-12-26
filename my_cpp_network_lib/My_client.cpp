@@ -32,7 +32,7 @@ int My_client::create_client_socket(void)
 int My_client::request_to_connect_server(const char *_h, const char *_port)
 {
     if ((h = gethostbyname(_h)) == 0) {
-        printf("gethostbyname failed.\n");
+        std::cout<<"gethostbyname failed."<<std::endl;
         close(sockfd);
         return -1;
     }
@@ -58,11 +58,10 @@ int My_client::send_msg_to_server(const char *_buffer)
 {
     int iret;
     if ((iret = send(sockfd, _buffer, strlen(_buffer), 0)) <= 0) {
-        printf("iret=%d\n", iret);
+        std::cout<<"iret="<<iret<<std::endl;
         perror("send");
         return -1;
     }
-    std::cout << strlen(_buffer) << std::endl;
     return 1;
 }
 
@@ -77,11 +76,9 @@ int My_client::recv_msg_from_server(char *_buffer,size_t _buffer_size)
     int iret;
     memset(_buffer, 0, _buffer_size);
     if ((iret = recv(sockfd, _buffer, _buffer_size, 0)) <= 0) {
-        printf("iret=%d\n", iret);
-        close(sockfd);
+        std::cout<<"iret="<<iret<<std::endl;
         return -1;
     }
-    printf("接收：%s", _buffer);
     return 1;
 }
 

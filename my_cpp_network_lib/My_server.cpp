@@ -73,11 +73,10 @@ int My_server::acpt_client_connect(void)
         accept(listenfd, (struct sockaddr *)&clientaddr, (socklen_t *)&socklen);
     if (clientfd == -1) {
         perror("accept");
-        close(clientfd);
-        close(listenfd);
+        this->close_server_socket();
         return -1;
     }
-    printf("客户端（%s）已连接。\n", inet_ntoa(clientaddr.sin_addr));
+    std::cout<<"客户端（"<<inet_ntoa(clientaddr.sin_addr)<<"）已连接。"<<std::endl;
     return 1;
 }
 
@@ -93,13 +92,10 @@ int My_server::recv_msg_from_client(char* buffer,size_t buffer_size)
     memset(buffer, 0, buffer_size);
     if ((iret = recv(clientfd, buffer, buffer_size, 0)) <= 0) {
         // 接收客户端的请求报文。
-        printf("iret=%d\n", iret);
+        std::cout<<"iret="<<iret<<std::endl;
         perror("receive");
-        // close(clientfd);
-        // close(listenfd);
         return -1;
     }
-    printf("iret=%d\n", iret);
     return 1;
 }
 
@@ -109,16 +105,14 @@ int My_server::recv_msg_from_client(char* buffer,size_t buffer_size)
  * @param buffer:发送缓冲区
  * @return 1 -1
  */
-int My_server::send_msg_to_client(char *buffer)
+int My_server::send_msg_to_client(const char *buffer)
 {
     int iret;
-    if ((iret = send(clientfd, buffer, strlen(buffer), 0)) <=
-        0) // 向客户端发送响应结果。
+    if ((iret = send(clientfd, buffer, strlen(buffer), 0)) <= 0)
+    // 向客户端发送响应结果。
     {
-        printf("iret=%d\n", iret);
+        std::cout<<"iret="<<iret<<std::endl;
         perror("send");
-        close(clientfd);
-        close(listenfd);
         return -1;
     }
     return 1;
