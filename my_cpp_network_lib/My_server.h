@@ -8,7 +8,7 @@ class My_server
 private:
     int listenfd;
     int clientfd;
-    //todo: 连接多个client
+    // todo: 连接多个client
     // static int clients_connected_num;
     // std::vector<int> clients_fd;
 
@@ -18,11 +18,11 @@ private:
 public:
     My_server();
 
-    int create_server_socket(void);
-    int config_server(const char *ip_addr, const char *port);
-    int acpt_client_connect(void);
-    int recv_msg_from_client(char *buffer);
-    int send_msg_to_client(char *buffer);
+    int  create_server_socket(void);
+    int  config_server(const char *ip_addr, const char *port);
+    int  acpt_client_connect(void);
+    int  recv_msg_from_client(char *buffer,size_t buffer_size);
+    int  send_msg_to_client(char *buffer);
     void close_server_socket(void);
 
     ~My_server(){};

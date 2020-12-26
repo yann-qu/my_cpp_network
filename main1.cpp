@@ -6,12 +6,11 @@
 int main(int, char **)
 {
     My_server my_server;
-    char buffer[24];
+    char      buffer[1024];
     my_server.create_server_socket();
-    my_server.config_server("0", "9999");
+    my_server.config_server("127.0.0.1", "9999");
     my_server.acpt_client_connect();
-    while (my_server.recv_msg_from_client(buffer) == 1)
-    {
+    while (my_server.recv_msg_from_client(buffer,sizeof(buffer)) == 1) {
         printf("接收：%s\n", buffer);
     }
     my_server.close_server_socket();

@@ -17,8 +17,7 @@ My_client::My_client(void)
  */
 int My_client::create_client_socket(void)
 {
-    if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1)
-    {
+    if ((sockfd = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
         perror("socket");
         return -1;
     }
@@ -30,22 +29,20 @@ int My_client::create_client_socket(void)
  * @description: 向服务器发起连接请求。
  * @param _h host
  * @param _port port
- * @return 
+ * @return
  */
 int My_client::request_to_connect_server(const char *_h, const char *_port)
 {
-    if ((h = gethostbyname(_h)) == 0)
-    {
+    if ((h = gethostbyname(_h)) == 0) {
         printf("gethostbyname failed.\n");
         close(sockfd);
         return -1;
     }
     memset(&servaddr, 0, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    servaddr.sin_port = htons(atoi(_port));
+    servaddr.sin_port   = htons(atoi(_port));
     memcpy(&servaddr.sin_addr, h->h_addr, h->h_length);
-    if (connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) != 0)
-    {
+    if (connect(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr)) != 0) {
         perror("connect");
         close(sockfd);
         return -1;
@@ -62,13 +59,12 @@ int My_client::request_to_connect_server(const char *_h, const char *_port)
 int My_client::send_msg_to_server(const char *_buffer)
 {
     int iret;
-    if ((iret = send(sockfd, _buffer, strlen(_buffer), 0)) <= 0)
-    {
+    if ((iret = send(sockfd, _buffer, strlen(_buffer), 0)) <= 0) {
         printf("iret=%d\n", iret);
         perror("send");
         return -1;
     }
-    std::cout<<strlen(_buffer)<<std::endl;
+    std::cout << strlen(_buffer) << std::endl;
     return 1;
 }
 
@@ -102,14 +98,12 @@ int My_client::send_msg_to_server(const char *_buffer)
  * @param _buffer：接收信息缓冲区
  * @return 1 -1
  */
-int My_client::recv_msg_from_server(char *_buffer)
+int My_client::recv_msg_from_server(char *_buffer,size_t _buffer_size)
 {
     int iret;
-    memset(_buffer, 0, sizeof(_buffer));
-    if ((iret = recv(sockfd, _buffer, sizeof(_buffer), 0)) <= 0)
-    {
+    memset(_buffer, 0, _buffer_size);
+    if ((iret = recv(sockfd, _buffer, _buffer_size, 0)) <= 0) {
         printf("iret=%d\n", iret);
-        perror("receive");
         close(sockfd);
         return -1;
     }
